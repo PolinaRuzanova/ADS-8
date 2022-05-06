@@ -8,8 +8,7 @@ void Train::addCage(bool light) {
         oneCage->prev = tail;
         oneCage->next = nullptr;
         tail = tail->next;
-    }
-    else {
+    } else {
         first = new Cage;
         first->light = light;
         first->next = nullptr;
@@ -29,8 +28,7 @@ int Train::getLength() {
         if (train->light != true) {
             Tsize++;
             train = train->next;
-        }
-        else {
+        } else {
             train->light = false;
             break;
         }
@@ -41,8 +39,7 @@ int Train::getLength() {
     }
     if (train->light == false) {
         return Tsize;
-    }  
-    else {
+    } else {
         return getLength();
     }
 }
